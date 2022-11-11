@@ -3,9 +3,17 @@ var currentDate = document.getElementById('currentDay')
 
 var now = dayjs();
 currentDate.innerHTML = now;
+var currentTime = dayjs().hour();
+console.log(currentTime)
 // the code isn't run until the browser has finished rendering all the elements
 // in the html.
-$(function () {
+$(".time-block").each(function () { 
+    var timeBlock = $(this).attr("id").split("-")[1];
+
+    if (currentTime == timeBlock) {
+        $(this).addClass("present");
+        $(this).children(".description").addClass("present");
+    }
     // TODO: Add a listener for click events on the save button. This code should
     // use the id in the containing time-block as a key to save the user input in
     // local storage. HINT: What does `this` reference in the click listener
