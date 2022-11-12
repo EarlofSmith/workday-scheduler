@@ -1,30 +1,36 @@
-// Wrap all code that interacts with the DOM in a call to jQuery to ensure that
-var currentDate = document.getElementById('currentDay');
 
+var currentDate = document.getElementById('currentDay');
+var timeBlock = document.getElementsByClassName('#time-block')
 var DateTime = luxon.DateTime;
 var dayOfYear = DateTime.now().toLocaleString(DateTime.DATE_FULL);
 // var now = dayjs.extend(dayOfYear);
-currentDate.innerHTML = dayOfYear;
+
+function displayTodaysDate() {
+   currentDate.innerHTML = dayOfYear; ;
+}
 
 var currentTime = DateTime.now().get('hour')
 console.log(currentTime);
 // the code isn't run until the browser has finished rendering all the elements
 // in the html.
-$(".time-block").each(function () { 
-    var timeBlock = $(this).attr("id").split("-")[1];
+function timeCheck() { 
+    for (let i=9; i<17;i++) {
+        var timeTable = timeBlock('#' + i);
+        if (currentTime == i) {
+          timeTable.addClass("present");
 
-    if (currentTime == timeBlock) {
-        $(this).addClass("present");
-        $(this).children(".description").addClass("present");
+        } else if (currentTime > i) {
+            timeTable.addClass("past");
 
-     } else if (currentTime > timeBlock) {
-        $(this).removeClass("future");
-        $(this).addClass("past");
-     } else if (currentTime < timeBlock) {
-        $(this).removeClass("present");
-        $(this).addClass("future");
-     }
-
+        } else if (currentTime < i) {
+            // timeTable.removeClass("present");
+            timeTable.addClass("future");
+        }
+        
+    }
+};
+displayTodaysDate();
+timeCheck();
     // TODO: Add a listener for click events on the save button. This code should
     // use the id in the containing time-block as a key to save the user input in
     // local storage. HINT: What does `this` reference in the click listener
@@ -43,5 +49,5 @@ $(".time-block").each(function () {
     // attribute of each time-block be used to do this?
     //
     // TODO: Add code to display the current date in the header of the page.
-  });
+  
   
