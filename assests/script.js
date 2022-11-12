@@ -1,10 +1,13 @@
 // Wrap all code that interacts with the DOM in a call to jQuery to ensure that
 var currentDate = document.getElementById('currentDay');
 
-var now = dayjs.extend(dayOfYear);
-currentDate.innerHTML = now;
-var currentTime = dayjs();
-console.log(currentTime)
+var DateTime = luxon.DateTime;
+var dayOfYear = DateTime.now().toLocaleString(DateTime.DATE_FULL);
+// var now = dayjs.extend(dayOfYear);
+currentDate.innerHTML = dayOfYear;
+
+var currentTime = DateTime.now().get('hour')
+console.log(currentTime);
 // the code isn't run until the browser has finished rendering all the elements
 // in the html.
 $(".time-block").each(function () { 
