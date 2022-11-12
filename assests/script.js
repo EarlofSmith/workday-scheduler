@@ -1,4 +1,6 @@
-
+$(document).ready(function() {
+    console.log("Ready!");
+});
 var currentDate = document.getElementById('currentDay');
 var timeBlock = document.getElementsByClassName('#time-block')
 var DateTime = luxon.DateTime;
@@ -15,7 +17,7 @@ console.log(currentTime);
 // in the html.
 function timeCheck() { 
     for (let i=9; i<17;i++) {
-        var timeTable = timeBlock('#' + i);
+        var timeTable = $('#' + i);
         if (currentTime == i) {
           timeTable.addClass("present");
 
