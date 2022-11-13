@@ -21,4 +21,15 @@
     WHEN I refresh the page
     THEN the saved events persist
 
+## Usage
+
+https://earlofsmith.github.io/workday-scheduler/
     
+
+![deployed page](./assests/deployed%20page.png)
+
+
+## Credits
+
+    Google, w3, https://moment.github.io/luxon/#/?id=luxon
+    bootcamp provided most of html
