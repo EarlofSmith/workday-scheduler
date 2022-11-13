@@ -1,7 +1,6 @@
 
 var currentDate = document.getElementById('currentDay');
-var timeBlock = document.getElementsByClassName('#time-block');
-// time api i found when i couldnt get the plug ins to work
+// time api i found when i couldnt get the dayjs plug ins to work
 var DateTime = luxon.DateTime;
 var dayOfYear = DateTime.now().toLocaleString(DateTime.DATE_FULL);
 var currentTime = DateTime.now().get('hour');
@@ -24,7 +23,7 @@ $(".time-block").each(function() {
         $(this).addClass("past");
     }
 });
-// adds an eventlistenr for the save and logs it to local storage
+// adds an eventlistenr for the save button and logs it to local storage
 
 $(".saveBtn").click(function (event) {
     event.preventDefault();
@@ -33,7 +32,7 @@ $(".saveBtn").click(function (event) {
     localStorage.setItem(time,value);
 });
 
-// retrive the text from local data
+// puts the text from local data into the corispoding boxes when the page is reloaded
 $("#hour-8 .description").val(localStorage.getItem("8"));
 $("#hour-9 .description").val(localStorage.getItem("9"));
 $("#hour-10 .description").val(localStorage.getItem("10"));

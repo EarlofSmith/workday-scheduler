@@ -17,6 +17,7 @@ body {
   
   .description {
     white-space: pre-wrap;
+    color: white;
   }
   header {
     background-color: #027a02;
@@ -40,7 +41,7 @@ body {
   }
   
   .past {
-    background-color: #d3d3d3;
+    background-color: #879e77;
     color: white;
   }
   
@@ -58,7 +59,7 @@ body {
     border-left: 1px solid black;
     border-top-right-radius: 15px;
     border-bottom-right-radius: 15px;
-    background-color: #06aed5;
+    background-color: #0625d5;
     color: white;
   }
   
