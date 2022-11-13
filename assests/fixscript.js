@@ -1,11 +1,14 @@
 
 var currentDate = document.getElementById('currentDay');
+var displayTime = document.getElementById("currentTime");
+
+
 // time api i found when i couldnt get the dayjs plug ins to work
 var DateTime = luxon.DateTime;
-var dayOfYear = DateTime.now().toLocaleString(DateTime.DATE_FULL);
+
 var currentTime = DateTime.now().get('hour');
 // shows the date in the head of the document
-    currentDate.innerHTML = dayOfYear;
+    currentDate.innerHTML = DateTime.now().toLocaleString(DateTime.DATETIME_MED);
 // checks the time against the div classes number and changes the divs classes 
 $(".time-block").each(function() {
     var timeDiv = $(this).attr("id").split("-")[1];
@@ -31,6 +34,12 @@ $(".saveBtn").click(function (event) {
     var time = $(this).parent().attr("id").split("-")[1];
     localStorage.setItem(time,value);
 });
+// added a clear button to get rid of schedle for a new day
+$("#clearBtn").click(function(event) {
+    event.preventDefault();
+    $("textarea").val("");
+    localStorage.clear();
+})
 
 // puts the text from local data into the corispoding boxes when the page is reloaded
 $("#hour-8 .description").val(localStorage.getItem("8"));

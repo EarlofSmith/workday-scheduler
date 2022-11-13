@@ -56,11 +56,21 @@ body {
   }
   
   .saveBtn {
-    border-left: 1px solid black;
+    border-left: 2px solid white;
     border-top-right-radius: 15px;
     border-bottom-right-radius: 15px;
     background-color: #03f41b;
     color: white;
+    text-shadow: 1px 1px #000000;
+  }
+  
+  .clearBtn {
+    border: 2px solid white;
+    border-radius: 15px;
+    text-shadow: 1px 1px #000000;
+    background-color: #03f41b;
+    color: white;
+    
   }
   
   .saveBtn i:hover {
