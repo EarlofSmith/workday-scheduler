@@ -1,6 +1,7 @@
 
 var currentDate = document.getElementById('currentDay');
 var timeBlock = document.getElementsByClassName('#time-block');
+// time api i found when i couldnt get the plug ins to work
 var DateTime = luxon.DateTime;
 var dayOfYear = DateTime.now().toLocaleString(DateTime.DATE_FULL);
 var currentTime = DateTime.now().get('hour');

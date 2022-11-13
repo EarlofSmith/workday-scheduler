@@ -1,6 +1,9 @@
 body {
     font-family: 'Open Sans', sans-serif;
     font-size: 16px;
+    background-color: #027a02;
+    color: white;
+    margin-bottom: 40px;
   }
   
   textarea {
@@ -16,7 +19,7 @@ body {
     white-space: pre-wrap;
   }
   header {
-    background-color: #77dd77;
+    background-color: #027a02;
     font-size: 150%;
   }
   .time-block {
@@ -28,9 +31,12 @@ body {
   }
   
   .hour {
-    background-color: #ffffff;
-    color: #000000;
-    border-top: 1px dashed #000000;
+    color: #ffffff;
+    background-color: #027a02;
+    border-top: 1px dashed #ffffff;
+    font-weight: 500;
+    font-size: 120%;
+   
   }
   
   .past {
