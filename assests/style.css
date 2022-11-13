@@ -15,7 +15,10 @@ body {
   .description {
     white-space: pre-wrap;
   }
-  
+  header {
+    background-color: #77dd77;
+    font-size: 150%;
+  }
   .time-block {
     border-radius: 15px;
   }
